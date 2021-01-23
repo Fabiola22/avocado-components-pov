@@ -20,7 +20,7 @@ export namespace Components {
          */
         "middle": string;
     }
-    interface TableSortHeader {
+    interface SortColumn {
     }
     interface TacoTable {
         "columns": { title: string; id: string; hasSorting: BooleanConstructor; class: string; }[];
@@ -34,11 +34,11 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
-    interface HTMLTableSortHeaderElement extends Components.TableSortHeader, HTMLStencilElement {
+    interface HTMLSortColumnElement extends Components.SortColumn, HTMLStencilElement {
     }
-    var HTMLTableSortHeaderElement: {
-        prototype: HTMLTableSortHeaderElement;
-        new (): HTMLTableSortHeaderElement;
+    var HTMLSortColumnElement: {
+        prototype: HTMLSortColumnElement;
+        new (): HTMLSortColumnElement;
     };
     interface HTMLTacoTableElement extends Components.TacoTable, HTMLStencilElement {
     }
@@ -48,7 +48,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
-        "table-sort-header": HTMLTableSortHeaderElement;
+        "sort-column": HTMLSortColumnElement;
         "taco-table": HTMLTacoTableElement;
     }
 }
@@ -67,7 +67,7 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
-    interface TableSortHeader {
+    interface SortColumn {
     }
     interface TacoTable {
         "columns"?: { title: string; id: string; hasSorting: BooleanConstructor; class: string; }[];
@@ -75,7 +75,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
-        "table-sort-header": TableSortHeader;
+        "sort-column": SortColumn;
         "taco-table": TacoTable;
     }
 }
@@ -84,7 +84,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "table-sort-header": LocalJSX.TableSortHeader & JSXBase.HTMLAttributes<HTMLTableSortHeaderElement>;
+            "sort-column": LocalJSX.SortColumn & JSXBase.HTMLAttributes<HTMLSortColumnElement>;
             "taco-table": LocalJSX.TacoTable & JSXBase.HTMLAttributes<HTMLTacoTableElement>;
         }
     }

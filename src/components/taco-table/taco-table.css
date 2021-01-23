@@ -30,3 +30,17 @@ td {
 .pink-class {
   color: pink;
 }
+
+
+/* Throwing this here until we figure out how to make sort-column.css work */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.l-margin-minus-8 {
+  margin-left: -8px;
+}
+
+.r-margin-5 {
+  margin-right: 5px;
+}
