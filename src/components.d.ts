@@ -20,6 +20,8 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface TableSortHeader {
+    }
     interface TacoTable {
         "columns": { title: string; id: string; hasSorting: BooleanConstructor; class: string; }[];
         "rows": [any];
@@ -32,6 +34,12 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLTableSortHeaderElement extends Components.TableSortHeader, HTMLStencilElement {
+    }
+    var HTMLTableSortHeaderElement: {
+        prototype: HTMLTableSortHeaderElement;
+        new (): HTMLTableSortHeaderElement;
+    };
     interface HTMLTacoTableElement extends Components.TacoTable, HTMLStencilElement {
     }
     var HTMLTacoTableElement: {
@@ -40,6 +48,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "table-sort-header": HTMLTableSortHeaderElement;
         "taco-table": HTMLTacoTableElement;
     }
 }
@@ -58,12 +67,15 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface TableSortHeader {
+    }
     interface TacoTable {
         "columns"?: { title: string; id: string; hasSorting: BooleanConstructor; class: string; }[];
         "rows"?: [any];
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "table-sort-header": TableSortHeader;
         "taco-table": TacoTable;
     }
 }
@@ -72,6 +84,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "table-sort-header": LocalJSX.TableSortHeader & JSXBase.HTMLAttributes<HTMLTableSortHeaderElement>;
             "taco-table": LocalJSX.TacoTable & JSXBase.HTMLAttributes<HTMLTacoTableElement>;
         }
     }

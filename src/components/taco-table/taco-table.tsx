@@ -23,7 +23,11 @@ export class TacoTable {
       <table>
         <thead>
           <tr>
-            { this.columns.map(column => <th>{column.title}</th>) }
+            { this.columns.map(column =>
+            <th>
+              { column.hasSorting ? <table-sort-header></table-sort-header> : '' }
+              {column.title}</th>)
+            }
           </tr>
         </thead>
         <tbody>
