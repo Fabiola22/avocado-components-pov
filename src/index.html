@@ -9,7 +9,9 @@
     <script nomodule src="/build/avocado-components-pov.js"></script>
   </head>
   <body>
-    <taco-table></taco-table>
+    <div>
+      <taco-table></taco-table>
+    </div>
   </body>
   <script>
     var table = document.querySelector('taco-table');
@@ -17,12 +19,13 @@
       {
         title: 'Name',
         id: 'name',
-        hasSorting: true
+        hasSorting: true,
+        class: "pink-class"
       },
       {
         title: 'Date',
         id: 'date',
-        hasSorting: false
+        hasSorting: false,
       },
       {
         title: 'Address',
@@ -73,7 +76,5 @@
         order: '87574505851064',
       },
     ];
-
-    debugger;
   </script>
 </html>

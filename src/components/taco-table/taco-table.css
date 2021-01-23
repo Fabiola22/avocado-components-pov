@@ -4,12 +4,29 @@ table {
   width: 100%;
 }
 
-td, th {
-  border: 1px solid #dddddd;
+th {
+  background: rgb(246, 246, 246);
   text-align: left;
   padding: 8px;
+  height: 41px;
+  font-size: 13px;
+  font-weight: 700;
+  color:rgb(30, 30, 30);
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+thead {
+  border: rgb(216, 216, 216) 1px solid;
+}
+
+td {
+  padding: 15px 15px 15px 5px;
+  border-bottom: 1px solid rgb(216, 216, 216);
+  color: rgb(74, 74, 74);
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 400;
+}
+
+.pink-class {
+  color: pink;
 }

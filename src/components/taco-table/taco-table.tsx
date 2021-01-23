@@ -11,7 +11,8 @@ export class TacoTable {
     {
       title:'',
       id: '',
-      hasSorting: Boolean
+      hasSorting: Boolean,
+      class: ""
     }
   ];
 
@@ -20,14 +21,22 @@ export class TacoTable {
   render() {
     return(
       <table>
-        <tr>
-          { this.columns.map(column => <th>{column.title}</th>) }
-        </tr>
+        <thead>
+          <tr>
+            { this.columns.map(column => <th>{column.title}</th>) }
+          </tr>
+        </thead>
+        <tbody>
           {
             this.rows.map(row =>
-              <tr> { this.columns.map(column => <td>{row[column.id]}</td>) } </tr>
+              <tr>
+              {
+                this.columns.map(column => <td>{row[column.id]}</td>)
+              }
+              </tr>
             )
           }
+        </tbody>
       </table>
     )
   }
