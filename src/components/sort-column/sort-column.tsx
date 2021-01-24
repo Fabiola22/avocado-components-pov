@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'sort-column',
@@ -6,6 +6,7 @@ import { Component, h } from '@stencil/core';
   shadow: false,
 })
 export class sortColumn {
+  @Prop() title: string;
   onToggle() {}
 
   render() {
@@ -13,6 +14,7 @@ export class sortColumn {
       <span class="cursor-pointer">
         <i class="fa fa-sort-up cursor-pointer"></i>
         <i class="fa fa-sort-down cursor-pointer l-margin-minus-8"></i>
+        {this.title}
       </span>
     )
   }

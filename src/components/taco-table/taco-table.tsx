@@ -16,6 +16,7 @@ export class TacoTable {
     }
   ];
 
+
   @Prop() rows: [any]; // Change this to state?
 
   render() {
@@ -24,10 +25,10 @@ export class TacoTable {
         <thead>
           <tr>
             { this.columns.map(column =>
-            <th>
-              { column.hasSorting ? <sort-column class="r-margin-5"></sort-column> : '' }
-              {column.title}</th>)
-            }
+              <th>
+                { column.hasSorting ? <sort-column  title={column.title} class="r-margin-5"></sort-column> : column.title }
+              </th>
+            )}
           </tr>
         </thead>
         <tbody>
