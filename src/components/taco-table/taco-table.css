@@ -27,10 +27,11 @@ td {
   font-weight: 400;
 }
 
-.pink-class {
-  color: pink;
+.primary-blue {
+  color: rgb(0, 123, 226);
+  font-weight: 700;
+  font-size: 14px;
 }
-
 
 /* Throwing this here until we figure out how to make sort-column.css work */
 .cursor-pointer {

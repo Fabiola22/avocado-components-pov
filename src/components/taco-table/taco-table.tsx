@@ -36,7 +36,7 @@ export class TacoTable {
             this.rows.map(row =>
               <tr>
               {
-                this.columns.map(column => <td>{row[column.id]}</td>)
+                this.columns.map(column => <td class={column.class}>{row[column.id]}</td>)
               }
               </tr>
             )
