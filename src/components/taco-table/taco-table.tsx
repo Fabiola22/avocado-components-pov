@@ -6,6 +6,29 @@ import { Component, Prop, h } from '@stencil/core';
   shadow: true,
 })
 export class TacoTable {
+  container: HTMLElement;
+  window: Window | any;
+  document: Document | any;
+  root:Element | any;
+  _element: any;
+
+  init() {
+    return Promise.resolve(this._init());
+  }
+
+  async componentWillLoad() {
+    this.window = window;
+    await this._init();
+  }
+
+  componentDidLoad() {
+  }
+
+  async _init(): Promise<void> {
+    this.document = this.window.document;
+    this.root = this.document.documentElement;
+  }
+
   @Prop() columns =
    [
     {
@@ -15,8 +38,6 @@ export class TacoTable {
       class: ""
     }
   ];
-
-
   @Prop() rows: [any]; // Change this to state?
 
   render() {
