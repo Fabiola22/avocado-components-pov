@@ -27,6 +27,8 @@ export namespace Components {
         "columns": { title: string; id: string; hasSorting: BooleanConstructor; class: string; }[];
         "rows": [any];
     }
+    interface WrapperComponent {
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -47,10 +49,17 @@ declare global {
         prototype: HTMLTacoTableElement;
         new (): HTMLTacoTableElement;
     };
+    interface HTMLWrapperComponentElement extends Components.WrapperComponent, HTMLStencilElement {
+    }
+    var HTMLWrapperComponentElement: {
+        prototype: HTMLWrapperComponentElement;
+        new (): HTMLWrapperComponentElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
         "sort-column": HTMLSortColumnElement;
         "taco-table": HTMLTacoTableElement;
+        "wrapper-component": HTMLWrapperComponentElement;
     }
 }
 declare namespace LocalJSX {
@@ -75,10 +84,13 @@ declare namespace LocalJSX {
         "columns"?: { title: string; id: string; hasSorting: BooleanConstructor; class: string; }[];
         "rows"?: [any];
     }
+    interface WrapperComponent {
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
         "sort-column": SortColumn;
         "taco-table": TacoTable;
+        "wrapper-component": WrapperComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -88,6 +100,7 @@ declare module "@stencil/core" {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "sort-column": LocalJSX.SortColumn & JSXBase.HTMLAttributes<HTMLSortColumnElement>;
             "taco-table": LocalJSX.TacoTable & JSXBase.HTMLAttributes<HTMLTacoTableElement>;
+            "wrapper-component": LocalJSX.WrapperComponent & JSXBase.HTMLAttributes<HTMLWrapperComponentElement>;
         }
     }
 }
