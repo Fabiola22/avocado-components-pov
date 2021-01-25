@@ -26,7 +26,7 @@ export class TacoTable {
           <tr>
             { this.columns.map(column =>
               <th>
-                { column.hasSorting ? <sort-column  title={column.title} class="r-margin-5"></sort-column> : column.title }
+                { column.hasSorting ? <sort-column  column-name={column.title} class="red"></sort-column> : column.title }
               </th>
             )}
           </tr>

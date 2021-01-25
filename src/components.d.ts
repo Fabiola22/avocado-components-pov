@@ -21,7 +21,7 @@ export namespace Components {
         "middle": string;
     }
     interface SortColumn {
-        "title": string;
+        "columnName": string;
     }
     interface TacoTable {
         "columns": { title: string; id: string; hasSorting: BooleanConstructor; class: string; }[];
@@ -78,7 +78,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface SortColumn {
-        "title"?: string;
+        "columnName"?: string;
     }
     interface TacoTable {
         "columns"?: { title: string; id: string; hasSorting: BooleanConstructor; class: string; }[];

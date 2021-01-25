@@ -1,0 +1,22 @@
+.container {
+  cursor: pointer;
+  font-size: 13px;
+  margin-left: 8px;
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.left-13 {
+  left: -13px;
+}
+
+.top-6 {
+  top: 6px;
+}
+
+.top-1 {
+  top: -1px;
+}

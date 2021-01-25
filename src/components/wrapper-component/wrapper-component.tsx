@@ -6,6 +6,28 @@ import { Component, h } from '@stencil/core';
   shadow: true,
 })
 export class WrapperComponent {
+  container: HTMLElement;
+  window: Window | any;
+  document: Document | any;
+  root:Element | any;
+  _element: any;
+
+  init() {
+    return Promise.resolve(this._init());
+  }
+
+  async componentWillLoad() {
+    this.window = window;
+    await this._init();
+  }
+
+  componentDidLoad() {
+  }
+
+  async _init(): Promise<void> {
+    this.document = this.window.document;
+    this.root = this.document.documentElement;
+  }
   columns:any = [
     {
       title: 'Name',

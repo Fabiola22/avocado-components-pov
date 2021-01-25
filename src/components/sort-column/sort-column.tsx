@@ -2,19 +2,19 @@ import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'sort-column',
-  styleUrls: ['../../assets/fontawesome/css/all.css', 'sort-column.css'],
-  shadow: false,
+  styleUrl: 'sort-column.css',
+  shadow: true,
 })
 export class sortColumn {
-  @Prop() title: string;
+  @Prop() columnName: string;
   onToggle() {}
 
   render() {
     return (
-      <span class="cursor-pointer">
-        <i class="fa fa-sort-up cursor-pointer"></i>
-        <i class="fa fa-sort-down cursor-pointer l-margin-minus-8"></i>
-        {this.title}
+      <span class="container">
+        <ion-icon name="caret-up" class="absolute left-13 top-1"></ion-icon>
+        <ion-icon name="caret-down" class="absolute top-6 left-13"></ion-icon>
+        <span class="column-name">{this.columnName}</span>
       </span>
     )
   }
