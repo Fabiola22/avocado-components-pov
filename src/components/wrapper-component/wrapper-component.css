@@ -1,0 +1,10 @@
+.demo-table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  background: pink;
+}
+
+.columns {
+  background: pink !important;
+}

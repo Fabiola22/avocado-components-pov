@@ -1,5 +1,8 @@
 import { Component, h } from '@stencil/core';
-
+import "@ui5/webcomponents/dist/Table.js";
+import "@ui5/webcomponents/dist/TableColumn.js";
+import "@ui5/webcomponents/dist/TableRow.js";
+import "@ui5/webcomponents/dist/TableCell.js";
 @Component({
   tag: 'wrapper-component',
   styleUrl: 'wrapper-component.css',
@@ -69,7 +72,35 @@ export class WrapperComponent {
   ];
   render() {
     return <div>
+      {/* Simple Taco Table  */}
+      <h1>Simple Taco Table</h1>
       <taco-table columns={this.columns} rows={this.rows}></taco-table>
+
+      <h1>Sophisticated Table</h1>
+      <ui5-table
+        class="columns"
+        id="table">
+        <ui5-table-column slot="columns">
+          <span>Product</span>
+        </ui5-table-column>
+
+        <ui5-table-column slot="columns" min-width="800" popin-text="Supplier">
+          <span>Supplier</span>
+        </ui5-table-column>
+
+        <ui5-table-column slot="columns" min-width="600" popin-text="Dimensions" demand-popin>
+          <span>Dimensions</span>
+        </ui5-table-column>
+
+        <ui5-table-column slot="columns" min-width="600" popin-text="Weight" demand-popin>
+          <span>Weight</span>
+        </ui5-table-column>
+
+        <ui5-table-column slot="columns">
+          <span>Price</span>
+        </ui5-table-column>
+      </ui5-table>
     </div>;
+
   }
 }

@@ -22,7 +22,8 @@
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@stencil/core": "^2.0.1"
+    "@stencil/core": "^2.0.1",
+    "@ui5/webcomponents": "^1.0.0-rc.11"
   },
   "license": "MIT"
 }
