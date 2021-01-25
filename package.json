@@ -24,5 +24,15 @@
   "dependencies": {
     "@stencil/core": "^2.0.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fabiola22/avocado-components-pov.git"
+  },
+  "author": "Fabiola Cabrera",
+  "bugs": {
+    "url": "https://github.com/Fabiola22/avocado-components-pov/issues"
+  },
+  "homepage": "https://github.com/Fabiola22/avocado-components-pov#readme"
 }
