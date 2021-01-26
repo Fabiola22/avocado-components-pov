@@ -19,13 +19,16 @@ export class TacoTable {
   async componentWillLoad() {
     this.window = window;
     await this._init();
-    this.onColumnChanged(this.columns);
-    this.onRowsChanged(this.rows);
   }
 
   async _init(): Promise<void> {
     this.document = this.window.document;
     this.root = this.document.documentElement;
+  }
+
+  componentShouldUpdate(){
+    this.onColumnChanged(this.columns);
+    this.onRowsChanged(this.rows);
   }
 
   @Prop() columns = [{
