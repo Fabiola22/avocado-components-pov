@@ -43,7 +43,7 @@ export class TacoTable {
           <tr>
             { this.columns.map(column =>
               <th>
-                { column.hasSorting ? <sort-column  column-name={column.title} class="red"></sort-column> : column.title }
+                { (column && column.hasSorting) ? <sort-column  column-name={column.title} class="red"></sort-column> : column.title }
               </th>
             )}
           </tr>
