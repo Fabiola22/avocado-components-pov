@@ -19,6 +19,8 @@ export class TacoTable {
   async componentWillLoad() {
     this.window = window;
     await this._init();
+    this.onColumnChanged(this.columns);
+    this.onRowsChanged(this.rows);
   }
 
   async _init(): Promise<void> {
@@ -36,6 +38,14 @@ export class TacoTable {
   @Watch('columns')
   @Watch('rows')
 
+  onColumnChanged(newValue:any) {
+    this.columns = newValue;
+  }
+
+  onRowsChanged(newValue:any) {
+    this.rows = newValue;
+  }
+
   render() {
     return(
       <table>
@@ -43,8 +53,7 @@ export class TacoTable {
           <tr>
             { this.columns.map(column =>
               <th>
-                { column.title }
-                {/* { column.hasSorting ? <sort-column  column-name={column.title} class="red"></sort-column> : column.title } */}
+                { column.hasSorting ? <sort-column  column-name={column.title} class="red"></sort-column> : column.title }
               </th>
             )}
           </tr>
