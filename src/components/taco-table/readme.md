@@ -19,9 +19,14 @@
 
  - [wrapper-component](../wrapper-component)
 
+### Depends on
+
+- [sort-column](../sort-column)
+
 ### Graph
 ```mermaid
 graph TD;
+  taco-table --> sort-column
   wrapper-component --> taco-table
   style taco-table fill:#f9f,stroke:#333,stroke-width:4px
 ```
