@@ -19,6 +19,7 @@ export class sortColumn {
   async componentWillLoad() {
     this.window = window;
     await this._init();
+    this.oncolumnNameChanged(this.columnName);
   }
 
   async _init(): Promise<void> {
@@ -28,6 +29,9 @@ export class sortColumn {
 
   @Prop() columnName: string;
   @Watch('columnName')
+  oncolumnNameChanged(newValue:any) {
+    this.columnName = newValue;
+  }
 
   onToggle() {}
 
