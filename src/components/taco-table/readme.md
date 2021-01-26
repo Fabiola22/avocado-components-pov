@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property  | Attribute | Description | Type                                                                              | Default                                                                                      |
-| --------- | --------- | ----------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `columns` | --        |             | `{ title: string; id: string; hasSorting: BooleanConstructor; class: string; }[]` | `[     {       title:'',       id: '',       hasSorting: Boolean,       class: ""     }   ]` |
-| `rows`    | --        |             | `[any]`                                                                           | `undefined`                                                                                  |
+| Property  | Attribute | Description | Type                                                                              | Default                                                                              |
+| --------- | --------- | ----------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `columns` | --        |             | `{ title: string; id: string; hasSorting: BooleanConstructor; class: string; }[]` | `[{       title:'',       id: '',       hasSorting: Boolean,       class: ""     }]` |
+| `rows`    | --        |             | `[any]`                                                                           | `undefined`                                                                          |
 
 
 ## Dependencies
