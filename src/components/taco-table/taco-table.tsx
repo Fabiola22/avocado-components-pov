@@ -1,8 +1,8 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Watch } from '@stencil/core';
 
 @Component({
   tag: 'taco-table',
-  styleUrl: 'taco-table.css',
+  styleUrl: 'taco-table.scss',
   shadow: true,
 })
 export class TacoTable {
@@ -21,24 +21,20 @@ export class TacoTable {
     await this._init();
   }
 
-  componentDidLoad() {
-  }
-
   async _init(): Promise<void> {
     this.document = this.window.document;
     this.root = this.document.documentElement;
   }
 
-  @Prop() columns =
-   [
-    {
+  @Prop() columns = [{
       title:'',
       id: '',
       hasSorting: Boolean,
       class: ""
-    }
-  ];
-  @Prop() rows: [any]; // Change this to state?
+    }];
+  @Prop() rows: [any];
+  @Watch('columns')
+  @Watch('rows')
 
   render() {
     return(

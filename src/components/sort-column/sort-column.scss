@@ -1,0 +1,20 @@
+@import '../../assets/fontawesome/css/all.css';
+
+.container {
+  cursor: pointer;
+  font-size: 13px;
+  margin-left: 8px;
+  position: relative;
+  padding: 1px;
+}
+
+.icon-container {
+  background: pink;
+  top: 20px;
+}
+
+.fa {
+  position: absolute;
+  left: -13px;
+  top: 2px;
+}

@@ -2,7 +2,7 @@ import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'sort-column',
-  styleUrl: 'sort-column.css',
+  styleUrl: 'sort-column.scss',
   shadow: true,
 })
 export class sortColumn {
@@ -21,9 +21,6 @@ export class sortColumn {
     await this._init();
   }
 
-  componentDidLoad() {
-  }
-
   async _init(): Promise<void> {
     this.document = this.window.document;
     this.root = this.document.documentElement;
@@ -35,14 +32,10 @@ export class sortColumn {
   render() {
     return (
       <span class="container">
-        <ion-icon
-          name="caret-up"
-          class="absolute left-13 top-1">
-        </ion-icon>
-        <ion-icon
-          name="caret-down"
-          class="absolute top-6 left-13">
-        </ion-icon>
+        <span class="icon-container">
+          <i class="fa fa-sort-up"></i>
+          <i class="fa fa-sort-down"></i>
+        </span>
         {this.columnName}
       </span>
     )
