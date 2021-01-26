@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop, Watch } from '@stencil/core';
 
 @Component({
   tag: 'sort-column',
@@ -27,6 +27,8 @@ export class sortColumn {
   }
 
   @Prop() columnName: string;
+  @Watch('columnName')
+
   onToggle() {}
 
   render() {
