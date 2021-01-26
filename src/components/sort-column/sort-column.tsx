@@ -28,13 +28,13 @@ export class sortColumn {
 
   @Prop() columnName: string;
   @Watch('columnName')
-  onColumnNameChanged(newValue:any) {
-    this.columnName = newValue;
-  }
+  // onColumnNameChanged(newValue:any) {
+  //   this.columnName = newValue;
+  // }
 
-  componentShouldUpdate(){
-    this.onColumnNameChanged(this.columnName);
-  }
+  // componentShouldUpdate(){
+  //   this.onColumnNameChanged(this.columnName);
+  // }
 
   onToggle() {}
 
