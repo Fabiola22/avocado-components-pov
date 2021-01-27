@@ -21,6 +21,7 @@ export namespace Components {
         "middle": string;
     }
     interface SortColumn {
+        "activeColumn": string;
         "columnName": string;
     }
     interface TacoTable {
@@ -78,10 +79,13 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface SortColumn {
+        "activeColumn"?: string;
         "columnName"?: string;
+        "onToggle"?: (event: CustomEvent<any>) => void;
     }
     interface TacoTable {
         "columns"?: { title: string; id: string; hasSorting: BooleanConstructor; class: string; }[];
+        "onSort"?: (event: CustomEvent<any>) => void;
         "rows"?: [any];
     }
     interface WrapperComponent {

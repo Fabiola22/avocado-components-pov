@@ -1,4 +1,5 @@
 import { Component, Prop, h, Watch } from '@stencil/core';
+import { Event, EventEmitter } from '@stencil/core/internal';
 
 @Component({
   tag: 'taco-table',
@@ -25,11 +26,7 @@ export class TacoTable {
     this.document = this.window.document;
     this.root = this.document.documentElement;
   }
-
-  // componentShouldUpdate() {
-  //   this.onColumnChanged(this.columns);
-  //   this.onRowsChanged(this.rows);
-  // }
+  @Event() sort: EventEmitter<any>;
 
   @Prop() columns = [{
       title:'',
@@ -41,13 +38,10 @@ export class TacoTable {
   @Watch('columns')
   @Watch('rows')
 
-  // onColumnChanged(newValue:any) {
-  //   this.columns = newValue;
-  // }
-
-  // onRowsChanged(newValue:any) {
-  //   this.rows = newValue;
-  // }
+  onSortHandler(_event) {
+    const orderDetails = _event.detail;
+    this.sort.emit(orderDetails);
+  }
 
   render() {
     return(
@@ -56,7 +50,16 @@ export class TacoTable {
           <tr>
             { this.columns.map(column =>
               <th>
-                { column.hasSorting ? <sort-column  column-name={column.title} class="red"></sort-column> : column.title }
+                { column.hasSorting ?
+                  <sort-column
+                    active-column={column.id}
+                    onToggle={(ev:any) => this.onSortHandler(ev)}
+                    column-name={column.title}
+                  >
+                  </sort-column> :
+
+                  column.title
+                }
               </th>
             )}
           </tr>

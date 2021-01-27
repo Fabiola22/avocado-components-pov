@@ -7,9 +7,17 @@
 
 ## Properties
 
-| Property     | Attribute     | Description | Type     | Default     |
-| ------------ | ------------- | ----------- | -------- | ----------- |
-| `columnName` | `column-name` |             | `string` | `undefined` |
+| Property       | Attribute       | Description | Type     | Default     |
+| -------------- | --------------- | ----------- | -------- | ----------- |
+| `activeColumn` | `active-column` |             | `string` | `undefined` |
+| `columnName`   | `column-name`   |             | `string` | `undefined` |
+
+
+## Events
+
+| Event    | Description | Type               |
+| -------- | ----------- | ------------------ |
+| `toggle` |             | `CustomEvent<any>` |
 
 
 ## Dependencies

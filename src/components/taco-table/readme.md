@@ -13,6 +13,13 @@
 | `rows`    | --        |             | `[any]`                                                                           | `undefined`                                                                          |
 
 
+## Events
+
+| Event  | Description | Type               |
+| ------ | ----------- | ------------------ |
+| `sort` |             | `CustomEvent<any>` |
+
+
 ## Dependencies
 
 ### Used by

@@ -28,7 +28,6 @@ export class WrapperComponent {
     let response = await fetch("https://jsonplaceholder.typicode.com/users");
     this.rows = await response.json();
   }
-
   columns:any = [
     {
       title: 'Name',
@@ -52,10 +51,16 @@ export class WrapperComponent {
       hasSorting: true
     }
   ];
-
+  onSortColumn(e: { detail: any; }) {
+    console.log('this is from the wrapper', e.detail);
+  }
   render() {
     return <div>
-      <taco-table columns={this.columns} rows={this.rows}></taco-table>
+      <taco-table
+        onSort={(ev:any) => this.onSortColumn(ev)}
+        columns={this.columns}
+        rows={this.rows}>
+      </taco-table>
     </div>;
   }
 }
